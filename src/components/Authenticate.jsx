@@ -23,12 +23,12 @@ export default function Authenticate ({ token }) {
 
     }
     return(
-    <>
+    <div classname="form">
     <h2>Authenticate</h2>
     {successMessage && <p>{successMessage}</p>}
     {error && <p>{error}</p>}
 
     <button onClick={handleClick}>Authentication Token!</button>
-    </>
+    </div>
     );
 }

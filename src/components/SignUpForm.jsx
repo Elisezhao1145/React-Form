@@ -34,7 +34,7 @@ export default function SignUpForm({ setToken }) {
         }
     }
     return (
-    <>
+    <div classname = "form">
         <h2>Sign Up</h2>
         {error && <p>{error}</p>}
     <form onSubmit={handleSubmit}>
@@ -44,7 +44,10 @@ export default function SignUpForm({ setToken }) {
                     setUsername(e.target.value);}
                 }}
                     />
-        </label>      
+        </label>
+        {username.length > 10?
+        <p>Username must be less than 10 characters</p>
+    :null}
         <br />
         <label>
             Password: <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)}/>
@@ -52,6 +55,6 @@ export default function SignUpForm({ setToken }) {
         <br />
         <button type="submit">Submit</button>
     </form>
-    </>
+    </div>
     );
 }
